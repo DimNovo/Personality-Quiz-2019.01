@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7464B8BF21F240C700C33946 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7464B8BE21F240C700C33946 /* QuestionData.swift */; };
 		7475CEA521EED74A002C5A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7475CEA421EED74A002C5A8A /* AppDelegate.swift */; };
 		7475CEAA21EED74A002C5A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7475CEA821EED74A002C5A8A /* Main.storyboard */; };
 		7475CEAC21EED74A002C5A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7475CEAB21EED74A002C5A8A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7464B8BE21F240C700C33946 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		7475CEA121EED74A002C5A8A /* Personality Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personality Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7475CEA421EED74A002C5A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7475CEA921EED74A002C5A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7464B8BC21F2401100C33946 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7475CEA821EED74A002C5A8A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7464B8BD21F2401700C33946 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7464B8BE21F240C700C33946 /* QuestionData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7475CE9821EED74A002C5A8A = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +76,10 @@
 		7475CEA321EED74A002C5A8A /* Personality Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				7475CEA421EED74A002C5A8A /* AppDelegate.swift */,
+				7464B8BD21F2401700C33946 /* Model */,
+				7464B8BC21F2401100C33946 /* View */,
 				7475CEBA21EEEB80002C5A8A /* Controllers */,
-				7475CEA821EED74A002C5A8A /* Main.storyboard */,
+				7475CEA421EED74A002C5A8A /* AppDelegate.swift */,
 				7475CEAB21EED74A002C5A8A /* Assets.xcassets */,
 				7475CEAD21EED74A002C5A8A /* LaunchScreen.storyboard */,
 				7475CEB021EED74A002C5A8A /* Info.plist */,
@@ -151,6 +170,7 @@
 			files = (
 				7475CEA521EED74A002C5A8A /* AppDelegate.swift in Sources */,
 				7475CEB721EED866002C5A8A /* WelcomeViewController.swift in Sources */,
+				7464B8BF21F240C700C33946 /* QuestionData.swift in Sources */,
 				7475CEB921EEEB5F002C5A8A /* QuestionViewController.swift in Sources */,
 				7475CEBC21EEEBCE002C5A8A /* ResultsViewController.swift in Sources */,
 			);
