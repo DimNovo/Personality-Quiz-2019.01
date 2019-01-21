@@ -125,18 +125,18 @@ class QuestionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard segue.identifier == "ResultsSegue"
-            else { return }
-        guard let destination = segue.destination as? ResultsViewController
-            else { return }
+        guard segue.identifier == "ResultsSegue",
+        let destination = segue.destination as?
+        ResultsViewController
+        else { return }
         destination.answers = answersChosen
-        
      }
     
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         
         let answers = questions[questionIndex].answers
-        guard let index = singleButtons.index(of: sender) else { return }
+        guard let index = singleButtons.index(of: sender)
+        else { return }
         let answer = answers[index]
         answersChosen.append(answer)
         print(#function, answer)
