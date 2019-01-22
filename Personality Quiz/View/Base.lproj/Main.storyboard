@@ -292,16 +292,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-x0-UUH">
-                                <rect key="frame" x="20" y="175.5" width="280" height="129"/>
+                                <rect key="frame" x="20" y="211" width="280" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы - 🐶!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6R-vg-J1i">
-                                        <rect key="frame" x="53" y="0.0" width="174" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6R-vg-J1i">
+                                        <rect key="frame" x="115" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы любите друзей и большие компании. Цените дружбу. На вас можно положиться!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-Fu-EsI">
-                                        <rect key="frame" x="1" y="68" width="278" height="61"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-Fu-EsI">
+                                        <rect key="frame" x="140" y="58" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -318,10 +318,19 @@
                         <viewLayoutGuide key="safeArea" id="4Sn-4y-R6T"/>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="rBU-lH-MP5">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="bRd-Ft-d5k"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="bRd-Ft-d5k">
+                            <connections>
+                                <segue destination="Dgo-Uc-X8O" kind="unwind" unwindAction="unwindToWelcomeViewController:" id="7c7-pg-vkW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultDescription" destination="k7U-Fu-EsI" id="6me-Js-ckb"/>
+                        <outlet property="resultType" destination="y6R-vg-J1i" id="6hq-tg-xjj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDA-4P-GrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Dgo-Uc-X8O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2276" y="101"/>
         </scene>
@@ -331,7 +340,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X2N-ut-5t7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QEl-EF-SAr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

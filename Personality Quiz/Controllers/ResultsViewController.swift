@@ -10,26 +10,40 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    var answers: [Answer]? {
-        didSet {
-            print(#function, answers ?? "nil")
-        }
-    }
-
+    @IBOutlet weak var resultType: UILabel!
+    @IBOutlet weak var resultDescription: UILabel!
+    
+    var dogIndex = 0
+    var catIndex = 0
+    var rabbitIndex = 0
+    var turtleUndex = 0
+    
+    var answers: [Answer]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        navigationItem.hidesBackButton = true
+        presentResult()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func presentResult () {
+        answers.enumerated().forEach {
+            switch $0.element.type {
+            case .dog:
+                dogIndex += 1
+            case .cat:
+                catIndex += 1
+            case .rabbit:
+                rabbitIndex += 1
+            case .turtle:
+                turtleUndex += 1
+            }
+        }
+        
+        let result = [dogIndex, catIndex, rabbitIndex, turtleUndex]
+        
+        print(result)
+        
+     }
 }

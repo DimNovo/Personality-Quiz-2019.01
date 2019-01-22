@@ -26,7 +26,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     
     var questionIndex = 0
-    
     var questions: [Question] = [
     
         Question(
@@ -80,7 +79,7 @@ class QuestionViewController: UIViewController {
         let answers = question.answers
         let progress = Float(questionIndex) / Float(questions.count)
         
-        navigationItem.title = "Вопрос номер: \(questionIndex + 1)"
+        navigationItem.title = "Вопрос № \(questionIndex + 1)"
         questionLabel.text = question.text
         questionLabel.numberOfLines = 0
         progressView.setProgress(progress, animated: true)
@@ -122,15 +121,6 @@ class QuestionViewController: UIViewController {
         rangedLabels.last?.text = answers.last?.text
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard segue.identifier == "ResultsSegue",
-        let destination = segue.destination as?
-        ResultsViewController
-        else { return }
-        destination.answers = answersChosen
-     }
     
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         
@@ -180,5 +170,14 @@ class QuestionViewController: UIViewController {
         } else {
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "ResultsSegue",
+            let destination = segue.destination as?
+            ResultsViewController
+            else { return }
+        destination.answers = answersChosen
     }
 }
