@@ -11,7 +11,7 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultType: UILabel!
-    @IBOutlet weak var resultDescription: UILabel!
+    @IBOutlet weak var resultDefinition: UILabel!
     
     var dogIndex = 0
     var catIndex = 0
@@ -41,9 +41,22 @@ class ResultsViewController: UIViewController {
             }
         }
         
-        let result = [dogIndex, catIndex, rabbitIndex, turtleUndex]
-        
-        print(result)
-        
-     }
+        let result = max(dogIndex, catIndex, rabbitIndex, turtleUndex)
+        switch result {
+        case dogIndex:
+            resultType.text = "Вы - \(AnimalType.dog.rawValue)!"
+            resultDefinition.text = AnimalType.dog.definition
+        case catIndex:
+            resultType.text = "Вы - \(AnimalType.cat.rawValue)!"
+            resultDefinition.text = AnimalType.cat.definition
+        case rabbitIndex:
+            resultType.text = "Вы - \(AnimalType.rabbit.rawValue)!"
+            resultDefinition.text = AnimalType.rabbit.definition
+        case turtleUndex:
+            resultType.text = "Вы - \(AnimalType.turtle.rawValue)!"
+            resultDefinition.text = AnimalType.turtle.definition
+        default:
+            break
+        }
+    }
 }
