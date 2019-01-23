@@ -16,7 +16,7 @@ class ResultsViewController: UIViewController {
     var dogIndex = 0
     var catIndex = 0
     var rabbitIndex = 0
-    var turtleUndex = 0
+    var turtleIndex = 0
     
     var answers: [Answer]!
     
@@ -37,11 +37,11 @@ class ResultsViewController: UIViewController {
             case .rabbit:
                 rabbitIndex += 1
             case .turtle:
-                turtleUndex += 1
+                turtleIndex += 1
             }
         }
         
-        let result = max(dogIndex, catIndex, rabbitIndex, turtleUndex)
+        let result = max(dogIndex, catIndex, rabbitIndex, turtleIndex)
         switch result {
         case dogIndex:
             resultType.text = "Вы - \(AnimalType.dog.rawValue)!"
@@ -52,7 +52,7 @@ class ResultsViewController: UIViewController {
         case rabbitIndex:
             resultType.text = "Вы - \(AnimalType.rabbit.rawValue)!"
             resultDefinition.text = AnimalType.rabbit.definition
-        case turtleUndex:
+        case turtleIndex:
             resultType.text = "Вы - \(AnimalType.turtle.rawValue)!"
             resultDefinition.text = AnimalType.turtle.definition
         default:
